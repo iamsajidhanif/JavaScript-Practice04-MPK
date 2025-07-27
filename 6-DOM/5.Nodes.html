@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: 5.Nodes</title>
+
+</head>
+
+<body>
+    <div id="container1">
+    </div>
+
+    <div id="container2">
+        <p id="para1">Paragraph1</p>
+        <p id="para2">Paragraph2</p>
+        <p id="para3">Paragraph3</p>
+    </div>
+
+    <div id="container3">
+        <h2 id="heading2">Heading2</h2>
+        <h3 id="heading3">Heading3</h3>
+        <h4 id="heading4">Heading4</h4>
+    </div>
+    
+    <script>
+        /*
+        document.createE1ement()
+        elem.createTextNode()
+        parent.appendChi1d()
+
+        parent.insertBefore(new, old)
+
+        parent.remove()
+        parent.removeChi1d(child)
+
+        parent.replaceChi1d(new, old) 
+        */
+
+        // ==================================
+        // How to Create HTML Elements in JS?
+        // ==================================
+        // :: document.createElement() ::
+        // :: elem.createTextNode() ::
+        // :: parent.appendChi1d() ::
+        
+        // Anchor Tag Creation
+        var a = document.createElement("a");
+        a.href = "https://marketingcubes.com";
+        a.textContent = "MarketingCubes";
+        document.getElementById("container1").appendChild(a);
+        
+        // H1 Heading Creation
+        var h1 = document.createElement("h1");
+        h1.textContent = "Welcome to Marketing Cubes";
+        document.getElementById("container1").appendChild(h1);
+
+        // H2 Heading Creation
+        var h2 = document.createElement("h2");
+        h2.textContent = "This is just Heading No.2";
+        document.getElementById("container1").appendChild(h2);
+        
+        // Paragraph Creation
+        var para1 = document.createElement("p");
+        para1.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus, totam veritatis eaque earum, corporis adipisci aliquid voluptates molestiae amet explicabo laboriosam harum ipsa minus velit? Provident delectus corrupti necessitatibus.";
+        document.getElementById("container1").appendChild(para1);
+
+        document.getElementById("container").replaceChild(h2, h1); // Ref: line # 125
+        
+        // ===================================
+        // How to Insert HTML Elements in JS?
+        // ===================================
+        // :: parent.insertBefore(new, old) ::
+
+        // Anchor Tag Creation
+        var fb = document.createElement("a");
+        fb.href = "https://facebook.com";
+        fb.textContent = "Visit Facebook";
+
+        // Inserting an Anchor Tag before Paragraph2 Tag
+        var para2 = document.getElementById("para2");
+        document.getElementById("container2").insertBefore(fb, para2);
+        
+        // ----------------------------------------------------------------------------------
+
+        // New Para Creation
+        var newPara = document.createElement("p");
+        newPara.textContent = "This is a new paragraph for this website.";
+        
+        // Inserting a New Paragraph before Heading3
+        var heading3 = document.getElementById("heading3");
+        document.getElementById("container3").insertBefore(newPara, heading3);
+        
+        // ----------------------------------------------------------------------------------
+        
+        // br Tag Creation
+        var br = document.createElement("br");
+        
+        // Inserting a br tag before Heading2
+        var heading2 = document.getElementById("heading2");
+        document.getElementById("container3").insertBefore(br, heading2);
+
+        // ==================================
+        // How to Remove HTML Elements in JS?
+        // ==================================
+        // :: parent.remove() ::
+        // :: parent.removeChi1d(child) ::
+
+        var gs = document.createElement("a");
+        gs.href = "https://google.com";
+        gs.textContent = "Google Search";
+        document.getElementById("container1").appendChild(gs);
+        
+        // Anchor Tag Removing
+        gs.remove();
+        
+        // Child Tag (p) Removing
+        document.getElementById("container1").removeChild(para1);
+
+        // =====================================
+        // How to Replace an HTML Element in JS?
+        // =====================================
+        // :: parent.replaceChi1d(new, old) ::
+
+        // Ref: line # 68
+
+
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+    </script>
+
+    
+</body>
+</html>

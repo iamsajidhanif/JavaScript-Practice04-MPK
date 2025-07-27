@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.Functions</title>
+
+
+</head>
+
+<body>
+    <script>
+        /*
+        Parameters & Arguments in Function
+        Void Function & Difference b/w Function and Arrow Function
+        Anonymous Function (without name)
+        Recursive Function
+        */
+
+        // ===================================
+        // Parameters & Arguments in Function
+        // ===================================
+        // add(5, 6); // arguments // 11 returning function (NOTE: Non-returning funcion is called a "Void function", which doesn't return any value)
+
+        // function add(a, b) // parameters
+        // {
+        //     console.log(a+b);
+        // }
+
+        // ==========================================================
+        // Void Function & Difference b/w Function and Arrow Function
+        // ==========================================================
+        // NOTE: Non-returning funcion is called a "Void function", which doesn't return any value.
+
+        // Returning Function:
+        // console.log(add(2, 5)); // We can keep calling a Function "before its declaration".
+
+        // function add (x, y)
+        // {
+        //     return x+y;
+        // }
+
+        // ----------------------------------------------------------------------------------------------------------------
+
+        // console.log(add(2, 5)); // We cannot keep calling an Arrow function "before its declaration".
+
+        // add = (x, y) =>
+        // {
+        //     return x+y;
+        // }
+
+        // console.log(add(2, 5)); // We MUST call an Arrow function "after its declaration".
+
+        // ===================
+        // Anonymous Function
+        // ===================
+        // NOTE-1: setTimeout runs after specific given time.
+        // setTimeout(function()
+        // {
+        //     console.log("Hello World!");
+        // }, 1000);
+
+        // NOTE-2: setInterval runs CONTINEOUSLY after specific given time.
+        // setInterval(function()
+        // {
+        //     console.log("Hello World!");
+        // }, 1000);
+
+        // ==================
+        // Recursive Function``
+        // ==================
+        // NOTE: When a function calls itself within its body, it is called "Recursive Function".
+
+        // function factorial(n)
+        // {
+        //     if (n==1)
+        // {
+        //     return 1;
+        // }
+        //     return n*factorial(n-1);
+        // }
+        // console.log(factorial(4));
+
+        // -------------------------------------------------------------------------------------------------------
+
+        var a = 10;
+        var b = 5;
+
+        console.log(add(a, b));
+
+        // ===============
+        // Table Printing
+        // ===============
+        /*
+        function table(a)
+        {
+            for(i=1; i<=10; i++)
+            {
+                ab = a * i;
+                console.log(a +" x "+i+" = "+ab);
+                // OR
+                // document.write(a +" x "+i+" = "+ab+"<br>");
+            }
+        }
+        table(10);
+        */
+
+    </script>
+
+    <script src="./Functions.js"></script>
+</body>
+
+</html>

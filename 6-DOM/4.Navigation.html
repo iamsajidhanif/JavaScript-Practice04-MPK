@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: 4.Navigation</title>
+</head>
+<body>
+    <div id="container">     
+        First               
+        <ul id="linkBox">   
+            <li class="link">Link0</li>
+            <li class="link">Link1</li>
+            <li class="link">Link2</li>
+        </ul>
+        Last
+    </div>
+
+    <script>
+        /*
+        parentNode,
+        childNodes & children,
+        firstChi1d, lastChi1d,
+        nodeValue,
+        previousSib1ing, nextSib1ing,
+       
+        nodeName:
+        nodeType:
+        Type Description
+        1   Element
+        2   Attr
+        3   Text
+        
+        and so on..
+        */
+
+        //  :: parentNode ::
+        var linkBox = document.getElementById("linkBox");
+        console.log(linkBox);
+        document.write(linkBox.parentNode); // [object HTMLDivElement]
+
+        // :: childNodes & children ::
+        document.write(linkBox.parentNode.childNodes[0]); // [object Text]
+        document.write(linkBox.parentNode.children[0]); // [object HTMLUListElement]
+        // // NOTE: Always use "children" instead of "childNodes" to get HTML elements of a parentNode.
+
+        // :: firstChi1d, lastChi1d ::
+        document.write(linkBox.parentNode.firstChild); // [object Text]
+        document.write(linkBox.parentNode.lastChild); // [object Text]
+
+        // :: nodeValue ::
+        document.write(linkBox.parentNode.firstChild.nodeValue); // First
+        document.write(linkBox.parentNode.lastChild.nodeValue); // Last
+
+        // :: previousSib1ing, nextSib1ing ::
+        var link1 = document.getElementsByClassName("link")[1];
+        document.write(link1); // [object HTMLLIElement]
+        document.write(link1.textContent); // [object HTMLLIElement] Link1
+
+        document.write(link1.previousSibling); // [object Text]
+        document.write(link1.previousSibling.previousSibling); // [object HTMLLIElement]
+        document.write(link1.previousSibling.previousSibling.textContent); // Link0
+
+        document.write(link1.nextSibling); // [object Text]
+        document.write(link1.nextSibling.nextSibling); // [object HTMLLIElement]
+        document.write(link1.nextSibling.nextSibling.textContent); //  // Link2
+        
+        // :: nodeName ::
+        document.write(link1.nextSibling.nextSibling.nodeName); //  // LI
+        
+        // :: nodeType ::
+        document.write(link1.nextSibling.nextSibling.nodeType); //  // 1 (Type Description: 1=Element, 2=Attr, 3=Text)
+
+
+</script>
+
+</body>
+   
+</html>

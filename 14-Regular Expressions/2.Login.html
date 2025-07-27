@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14: 2.Login</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            position: relative;
+        }
+
+        .form-heading {
+            font-size: 24px;
+            color: rgb(35, 35, 35);
+            text-align: center;
+
+            margin-bottom: 32px;
+        }
+
+        .form {
+            width: 300px;
+            height: 300px;
+            background: rgb(35, 35, 35, 0.037);
+
+            padding: 16px;
+
+            border: 2px solid rgb(35, 35, 35);
+            border-radius: 16px;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+            /* top and lef */
+        }
+
+        .form-input {
+            width: 100%;
+            height: 40px;
+            padding: 8px;
+            font-size: 14px;
+
+            background: rgb(196, 196, 196);
+            color: rgb(35, 35, 35);
+
+            border-radius: 30px;
+            border: none;
+
+            margin-bottom: 8px;
+        }
+
+        .form-btn {
+            margin-top: 16px;
+            background: rgb(35, 35, 35);
+            color: #eee;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" class="form">
+        <h2 class="form-heading">Login</h2>
+        <input type="text" class="form-input" placeholder="Name"><br>
+        <input type="phone" class="form-input" placeholder="Ph. i.e. 03001234567"><br>
+        <input type="email" class="form-input" placeholder="example@gmail.com"><br>
+        <input type="button" class="form-input form-btn" value="Login">
+    </form>
+
+    <script>
+        /*
+        REGEX is used to validate and format data in JavaScript.
+        */
+
+        let btn = document.getElementsByClassName("form-btn")[0];
+        let input = document.getElementsByClassName("form-input");
+
+        btn.onclick = () =>
+        {
+            regexAlphabets = /^[A-Za-z]+$/; // REGEX for name
+            regexPhone = /^\d{11}$/; // REGEX for phone number
+            regexEmail = /^\S+@\S+\.\S+$/; // REGEX for email
+            // example123@gmail.com
+
+            if(input[0].value == "" || input[1].value == "" || input[2].value == "")
+            {
+                alert("Every field must be filled out.");
+
+            }
+
+            else if(input[0].value.match(regexAlphabets) &&
+                input[1].value.match(regexPhone) &&
+                input[2].value.match(regexEmail)
+                )
+            {
+                alert("Given data has been verified.");
+            }else
+            {
+                alert("Given data has not been verified.");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

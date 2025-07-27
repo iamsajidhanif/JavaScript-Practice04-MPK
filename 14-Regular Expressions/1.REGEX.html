@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14: 1.REGEX</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        REGEX is used to validate and format data in JavaScript.
+        */
+
+        var food = "Biryani";
+
+        var regex = /^[a-z]$/; // REGEX for a small letter (only single letter)
+        var regex = /^[A-Z]$/; // REGEX for a capital letter (only single letter)
+
+        var regex = /^[a-z]+$/; // REGEX for small letters (+ is used for "1 to Many")
+        var regex = /^[A-Z]+$/; // REGEX for capital letters (+ is used for "1 to Many")
+        
+        var regex = /^[A-Za-z]+$/; // REGEX for small & capital letters (+ is used for "1 to Many")
+        var regex = /^[A-Za-z]*$/; // REGEX for small & capital letters (* is used for "0 to Many")
+
+        if (food.match(regex)) {
+            document.write("REGEX has verified the data");
+
+        } else {
+
+            document.write("The data has not verified by the REGEX");
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

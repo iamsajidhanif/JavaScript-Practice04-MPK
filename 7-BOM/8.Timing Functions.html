@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: 8.Timing Functions</title>
+</head>
+
+<body>
+    <script>
+        /*
+        window.setTimeout() or setTimeout()
+        clearTimeout()
+
+        setlnterval()
+        clearlnterval()
+        */
+
+        // ----------------------------------------------------------------------------
+
+        // setTimeout():
+        setTimeout(() => {
+            alert("Welcome to my website!");
+        }, 3000);
+
+        // ----------------------------------------------------------------------------
+
+        // clearTimeout():
+        var stopMsg = setTimeout(() => {
+            alert("Welcome to my page!");
+        }, 3000);
+        clearTimeout(stopMsg);
+
+        // ----------------------------------------------------------------------------
+
+        // setInternal():
+        var count = 0;
+        var stopCount = setInterval(() => {
+            count++;
+            document.write(count);
+
+            // clearTimout():
+            if (count == 5) {
+                // clearTimeout(stopCount);
+                // OR
+                clearInterval(stopCount);
+            }
+        }, 1000);
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

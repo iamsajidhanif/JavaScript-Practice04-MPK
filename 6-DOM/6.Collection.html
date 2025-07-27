@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: 6.Collection</title>
+
+</head>
+
+<body>
+
+    <a id="abc">
+        <span class="abc">a</span>
+        <span class="abc">b</span>
+        <span class="abc">c</span>
+    </a>
+    
+    <br>
+
+    <a id="xyz">
+        <i class="xyz">x</i>
+        <i class="xyz">y</i>
+        <i class="xyz">z</i>
+    </a>
+
+    <script>
+        var abc = document.getElementsByClassName("abc"); // it behaves like an Array
+        document.write(abc[0].textContent); // a, b, c
+        document.write(abc[0].tagName); // SPAN
+        document.write(abc.length); // 3 (Because it behaves like an Array)
+
+        for(i=0; i<abc.length; i++)
+        {
+            document.write(abc[i].textContent+"<br>");
+        }
+        
+        var xyz = document.getElementsByTagName("i"); // it also behaves like an Array
+        document.write(xyz[0].textContent); // x, y, z
+        document.write(xyz[0].tagName); // I
+        document.write(xyz.length); // 3 (Because it behaves like an Array, too)
+        
+        for(i=0; i<xyz.length; i++)
+        {
+            document.write(xyz[i].textContent+"<br>"); // x y z
+        }
+
+
+    </script>
+    
+</body>
+</html>

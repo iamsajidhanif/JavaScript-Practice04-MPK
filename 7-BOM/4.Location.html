@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: 4.Location</title>
+</head>
+<body>
+    <a href="#" onclick="newLocation()">Screen Lesson</a><br>
+
+    <script>
+        /*
+        window.location or location
+        window.location.href returns the href (URL) of the current page
+        window.location.hostname returns the domain name of the web host
+        window.location.pathname returns the path and filename of the current page
+        window.location.protocol returns the web protocol used (http: or https:)
+        window.location.assign() loads a new document
+        */
+        
+        document.write(window.location+"<br>");
+        document.write(window.location.href+"<br>");
+        document.write(window.location.hostname+"<br>");
+        document.write(window.location.pathname+"<br>");
+        document.write(window.location.protocol+"<br>");
+        
+        function newLocation()
+        {
+            window.location.assign("3.Screen.html");
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

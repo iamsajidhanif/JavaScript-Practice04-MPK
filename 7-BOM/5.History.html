@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: 5.History</title>
+</head>
+
+<body>
+    <!--
+    
+    window.history or history
+    window.history.back()
+    window.history.forward ( )
+    
+    -->
+
+    <form action="#">
+        <input type="text" placeholder="Name"><br><br>
+        <input type="password" placeholder="Password"><br><br>
+        <input type="submit" value="Submit"><br><br>
+
+        <button onclick="goBack()">Backward</button>
+        <button onclick="goFwd()">Forward</button>
+    </form>
+
+    <script>
+
+        goBack = () =>
+        {
+            window.history.back();
+        }
+
+        goFwd = () =>
+        {
+            window.history.forward();
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

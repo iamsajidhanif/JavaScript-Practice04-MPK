@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: 3.Screen</title>
+</head>
+<body>
+    
+    <script>
+    /*
+    window.screen or screen
+
+    screen.width
+    screen.height
+
+    screen.availWidth   = width - interaface features
+    screen.availHeight  = heigth - interaface features like taskbar
+
+    screen.colorDepth
+    screen.pixelDepth
+    Returns the number of bits used to display one color.
+    
+    NOTE: All modern computers use 24 bit or 32 bit hardware for color resolution
+    */
+   
+    // ======================
+    // Screen Width & Height
+    // ======================
+    document.write(screen.width+" | "+screen.height+"<br>"); 
+    document.write(window.screen.availWidth+" | "+window.screen.availHeight+"<br>");
+    
+    // ===============================
+    // Screen colorDepth & pixelDepth
+    // ===============================
+    document.write(window.screen.colorDepth+" | "+window.screen.pixelDepth);
+
+             
+        
+    </script>
+    
+</body>
+</html>

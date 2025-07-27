@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: 2.Window</title>
+</head>
+<body>
+    
+    <button onclick="openWind()">Open Window</button> <br><br>
+    <button onclick="closeWind()">Close Window</button> <br><br>
+    
+    <script>
+        /*
+        window.innerHeight
+        window.innerWidth
+        
+        window.open()
+        window.open("http://www.google.com/");
+        window.open("", "MsgWindow", "width=200,height=100")
+
+        window.close()
+        */
+       
+        // ===============================
+        // Window innerWidth & innerHeight
+        // ===============================
+        document.write(window.innerWidth+" | "+window.innerHeight); // 1708 | 792
+        
+        
+        // ===============
+        // Window Opening
+        // ===============
+        function openWind()
+        {
+            window.open(); // opens new tab (blank)
+            // OR
+            //window.open("https://marketingcubes.com"); // opens URL in new tab
+        }
+        
+        
+        // =====================================
+        // Custome Size Window Opening & Closing
+        // =====================================
+        var myNewWindow = window.open("", "Message Window", "width=600,height=400"); // opens new window of given sizes
+        myNewWindow.document.write("Window name: "+myNewWindow.name+"<br>"); // opens new window of given sizes with its name "Golden Window"
+        myNewWindow.document.write(myNewWindow.name); // opens new window of given sizes with its name "Message Window"
+        
+        // ===============
+        // Window Closing
+        // ===============
+        function closeWind()
+        {
+            window.close(); // opens new tab (blank)
+        }
+
+                 
+        
+    </script>
+    
+</body>
+</html>

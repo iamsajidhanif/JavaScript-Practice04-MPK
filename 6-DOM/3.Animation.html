@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: 3.Animation</title>
+    <style>
+        #box{
+            background-color: orangered;
+            width: 200px;
+            height: 200px;
+            transition: 2s ease all;
+        }
+
+    </style>
+
+</head>
+<body>
+    <button id="btn">Move Box</button>
+    <br>
+    <br>
+    <div id="box">BOX
+    </div>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var box = document.getElementById("box");
+
+        btn.onclick = () =>
+        {
+            box.style.transform = "translateX(500px)";
+            box.style.transform = "translateY(500px)";
+            box.style.transform = "translateX(300px) translateY(300px)";
+        }
+
+        box.onclick = () =>
+        {
+            box.style.backgroundColor = "cornflowerblue"; // "backgroundColor" instead of "background-color" in JS.
+            box.style.transform += "scale(1.5)"; // + is used to lock the object while scaling up.
+        }
+
+        
+        
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: 7.Popup Alert</title>
+</head>
+<body>
+    <script>
+        /*
+        window.alert() or alert()
+        window.confirm("Text here"); // retuns TRUE or FALSE
+        window.prompt("sometext" , "default Text" ) ; // returns value
+        */
+
+        // Alert Popup:
+        alert("Hi there!");
+
+        // Confirm Popup:
+        confirm("Are you agree with the terms and conditions?"); // returns TRUE or FALSE
+
+        var userInput = confirm("Are you above 18 of your age?");
+        if(userInput)
+        {
+            document.write("You are allowed<br>");
+        }else
+        {
+            document.write("You are not allowed<br>");
+        }
+
+        // Prompt popup:
+        var userName = prompt("What is your name?","E.g. Ali");
+        document.write("Welcome! "+userName);
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

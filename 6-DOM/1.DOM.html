@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: 1.DOM (Document Object Model)</title>
+
+    <style>
+        #btn{
+            color: white;
+            background-color: crimson;
+            /* backgroundColor is used inplace of background-color in JS */
+            font-size: 18px;
+            padding: 8px;
+        }
+
+        .para{
+            color:blueviolet;
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a href="#" id="link1">Click Link1</a> <br><br>
+
+    <a href="#" id="link2"><span>Click Link2</span></a> <br><br>
+    
+    <button id="btn">Click me</button>
+
+    <p class="para">1. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, consectetur omnis sunt
+        officiis repellat id aperiam, unde tenetur, quis ex libero minus. Laboriosam harum cumque iste vitae rem
+        assumenda quo.</p>
+
+    <p class="para">2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex sequi quidem ducimus quasi dolore
+        necessitatibus recusandae corrupti in architecto velit! Ratione asperiores voluptatum in eaque soluta eveniet,
+        illum labore voluptate?</p>
+
+    <script>
+        var link1 = document.getElementById("link1"); // returns an HTML element/ object in JS
+        console.log(link1); // returns an HTML element/ object in JS
+        console.log(link1.tagName); // returns HTML tag name in JS
+        console.log(link1.textContent); // returns complete text content including the hidden text.
+        console.log(link1.innerText); // returns only visible text content contained by an element and all its child elements, excluding the hidden text.
+    
+        
+        var link2 = document.getElementById("link2"); // returns an HTML element/ object in JS
+        console.log(link2.innerHTML); // returns the complete text content including inner HTML tag(s).
+        
+
+        document.getElementById("btn").textContent = "Don't Click";
+
+        document.getElementsByClassName("para")[0].textContent = "Para1"; // getElementsByClassName works like an Array
+        document.getElementsByTagName("p")[1].textContent = "Para2"; // getElementsByTagName works like an Array
+
+        // =====================================================
+        // Difference between queryselector and queryselectorall
+        // =====================================================
+        // * "querySelector" is used to select 1st element from the DOM tree (querySelector applys on single element).
+        // * "querySelectorAll" is used to select multiple elements from the DOM tree (querySelectorAll works like an array)
+         
+        document.querySelector("p").textContent = "Changed by querySelector"; // querySelector applys on 1st element
+        document.querySelectorAll(".para")[1].textContent = "Changed by querySelectorAll"; // querySelectorAll works like getElementsByClassName/ getElementsByTagName
+        
+        // Button Styling thru JS:
+        // =======================
+        var btn = document.getElementById("btn");
+        btn.style.color = "yellow";
+        
+        btn.style.background = "green"; // same as btn.style.backgroundColor
+        // OR
+        btn.style.backgroundColor = "purple"; // same as btn.style.background
+
+        btn.style.border = "2px solid blue";
+        
+        // Para Styling thru JS:
+        // =====================
+        var para = document.getElementsByClassName("para")[0];
+        para.style.color = "red";
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

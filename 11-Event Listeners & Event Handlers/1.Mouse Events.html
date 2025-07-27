@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11: 1.Mouse Events</title>
+</head>
+
+<body>
+    <button onclick="clickNow()">Click Now</button>
+
+    <button id="btn">Click Me</button>
+
+    <button id="btn2" onclick="clickMe()">Click Me2</button>
+
+    <script>
+        /*
+        onclick
+
+        onmouseover
+        onmouseout
+
+        onmousedown
+        onmouseup
+
+        addEventListener
+
+        */
+
+        // window.onclick = function()
+        // {
+        //     document.write("You have clicked the window");
+        // }
+
+        // --------------------------------------------------------------------------------------------------------
+
+        clickNow = () => {
+            document.write("You have clicked the button");
+        }
+        // --------------------------------------------------------------------------------------------------------
+
+        document.getElementById("btn").onclick = () => {
+            alert("onclick");
+        }
+        // --------------------------------------------------------------------------------------------------------
+
+        document.getElementById("btn").onmouseover = () => {
+            alert("onmouseover");
+        }
+        // -------------------------------------------------------------------------------------------------------
+
+        document.getElementById("btn").onmouseout = () => {
+            alert("onmouseout");
+        }
+        // --------------------------------------------------------------------------------------------------------
+
+        document.getElementById("btn").onmousedown = () => {
+            alert("onmousedown");
+        }
+        // ---------------------------------------------------------------------------------------------------------
+
+        document.getElementById("btn").onmouseup = () => {
+            alert("onmouseup");
+        }
+        // ----------------------------------------------------------------------------------------------------------
+
+        document.getElementById("btn").addEventListener("click", clickMe) // The clickMe is an "EventHandler" here.
+
+        function clickMe() {
+            alert("ONCLICK");
+
+        }
+
+        // --------------------------------------------------- OR ---------------------------------------------------
+
+        document.getElementById("btn").addEventListener("click", function () // The Anonymous Function is an "EventHandler" here.
+        {
+            alert("ONCLICK");
+
+        });
+
+        // --------------------------------------------------- OR ---------------------------------------------------
+
+        document.getElementById("btn").addEventListener("click", () => // The Arrow Function is an "EventHandler" here.
+        {
+            alert("ONCLICK");
+
+        });
+
+        // --------------------------------------------------- OR ---------------------------------------------------
+
+
+    </script>
+
+</body>
+
+</html>

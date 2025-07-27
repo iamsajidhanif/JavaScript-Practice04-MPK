@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 15: OOP</title>
+</head>
+
+<body>
+
+    <script>
+        // =======================
+        // How to create a Class?
+        // =======================
+
+        class Cat {
+            name = "Cato"; // property of Cat class
+            color = "Brown"; // property of Cat class
+            eyesColor = "Green"; // property of Cat class
+
+            walk() // method of Cat class
+            {
+                console.log("cat walking");
+            }
+
+            yawn() // method of Cat class
+            {
+                console.log("cat yawns");
+            }
+
+            jump() // method of Cat class
+            {
+                console.log("cat jumping");
+            }
+        }
+
+
+        let cat1 = new Cat(); // creating an object from a class
+        console.log(cat1);
+
+        console.log(cat1.name); // accessing a property of an object
+        console.log(cat1.color); // accessing a property of an object
+        console.log(cat1.eyesColor); // accessing a property of an object
+
+        console.log(cat1.walk()); // calling a method of an object
+        console.log(cat1.yawn()); // calling a method of an object
+        console.log(cat1.jump()); // calling a method of an object
+
+        // =============================================================
+        // How to change the property of an Object created by a Class?
+        // =============================================================
+        console.log(cat1.name); // Cato
+        cat1.name = "Mano";
+        console.log(cat1.name); // Mano
+
+        // -------------------------------------------------------------------
+
+        class Bike {
+            model = 2019;
+            make = "Honda";
+            price = 100000;
+
+            // Constructor: (NOTE: The "constructor" has the precedence over the above mentioned values of the properties)
+            // (NOTE: Constructor Method calls itself when an object is created)
+            constructor(upcomingModel, upcomingMake, upcomingPrice) {
+                this.model = upcomingModel;
+                this.make = upcomingMake;
+                this.price = upcomingPrice;
+            }
+
+            // getter methods:
+            getModel() {
+                return this.model; // we use "this" keyword to access the property
+            }
+
+            getMake() {
+                return this.make; // we use "this" keyword to access the property
+            }
+
+            getPrice() {
+                return this.price; // we use "this" keyword to access the property
+            }
+
+            // setter methods:
+            setModel(upcomingModel) {
+                this.model = upcomingModel;
+            }
+
+            setMake(upcomingMake) {
+                this.make = upcomingMake;
+            }
+
+            setPrice(upcomingPrice) {
+                this.price = upcomingPrice;
+            }
+
+            toString() {
+                return "Model:" + this.model + " Make:" + this.make + " Price:" + this.price;
+            }
+        }
+
+        var bike1 = new Bike();
+        // Accessing properties of an object:
+        console.log(bike1.model); // 2019
+        console.log(bike1.make); // Honda
+        console.log(bike1.price); // 100000
+
+        // Changing properties of an object:
+        bike1.model = 2022;
+        bike1.make = "Suzuki";
+        bike1.price = 125000;
+
+        // Accessing properties of an object:
+        console.log(bike1.model); // 2022
+        console.log(bike1.make); // Suzuki
+        console.log(bike1.price); // 125000
+
+
+        // =======================================================================
+        // How to access properties of an object thru its methods (getter mthods)?
+        // =======================================================================
+        console.log(bike1.getModel()); // 2022
+        console.log(bike1.getMake()); // Suzuki
+        console.log(bike1.getPrice()); // 125000
+
+
+        // ==============================================================================
+        // How to set values of properties of an objct thru its methods (setter methods)?
+        // ==============================================================================
+        bike1.setModel(2025);
+        bike1.setMake("Kawasaki");
+        bike1.setPrice(150000);
+
+        console.log(bike1.getModel()); // 2025
+        console.log(bike1.getMake()); // Kawasaki
+        console.log(bike1.getPrice()); // 150000
+
+        console.log(bike1.toString());
+
+
+        // ==================================================================
+        // How to assign value of properties of an object thru "Constructor"?
+        // ==================================================================
+        var bike1 = new Bike(2026, "JenOne", 200000);
+        console.log(bike1.toString());
+
+
+        // =============================================
+        // Constructor Function (Methodand) & Prototype
+        // =============================================
+        // Old Approach:
+        function objCreator(model, make) {
+            var car = {
+                model: model,
+                make: make
+            }
+            return car;
+        }
+
+        function objCreator(model, make) {
+            var car = {}
+
+            user.model = model;
+            user.make = make;
+
+            return car;
+        }
+
+        // New Approach:
+        // We create Constructor Function (Method) in order to create objects:
+        function Car() // "Car" is a "Constructor Function (Method)", works like a Class.
+        {
+            this.model = 2010;
+            this.make = "Honda";
+            // We don't define method here.
+            // this.ready = function () {
+            //     console.log(`${this.color} car is ready`);
+            // }
+        }
+
+        var car1 = new Car();
+        // We can create property outside the Constructor Function, even after creating any object.
+        Car.prototype.price = 500000;
+        Car.prototype.color = 'Black';
+
+        // We can create method outside the Constructor Function, even after creating any object.
+        Car.prototype.drive = function () {
+            console.log(`${this.color} car is ready for driving`);
+        }
+
+        console.log(car1 instanceof Car); // true
+        console.log(car1); // Car {model: 2010, make: 'Honda'}
+        // Properties of an Object (car1)
+        console.log(car1.model); // 2010
+        car1.model = 2015;
+        console.log(car1.model); // 2015
+        console.log(car1.price); // 500000
+        console.log(car1.color); // Black
+        // car1.ready(); // Black car is ready for driving
+        car1.drive(); // Black car is ready for driving
+
+        // ==================================================================
+        // Premitive Values and Non-Premitive Values
+        // ==================================================================
+        
+        // Premitive Values (copied with their "values"):
+        var num = 3;
+        var num2 = num;
+        num2++;
+        console.log(num); // 3
+        console.log(num2); // 4 (COPIED WITH ITS "VALUE")
+                
+        // Non-Premitive Values (copied with their "reference"):
+        // Example 1 (Object)
+        var obj = {num: 3}
+        var obj2 = {num: 3}
+        var obj3 = obj
+        console.log(obj == obj2); // false (both are not equal)
+        obj3.num++;
+        console.log(obj); // {num: 4} (copied with their "reference")
+        console.log(obj2); // {num: 3}
+        console.log(obj3); // {num: 4}
+        
+        // Non-Premitive Values (COPIED WITH ITS "REFERENCE")
+        // Example 1 (Array)
+        var arr = [3]
+        var arr2 = [3]
+        var arr3 = arr;
+        console.log(arr == arr2); // false (both are not equal)
+        arr3[0]++;
+        console.log(arr); // [4] (COPIED WITH ITS "REFERENCE")
+        console.log(arr2); // [3]
+        console.log(arr3); // [4]
+
+        // ==================================================================
+        // "for in" loop for "Object" + Object Literal + "in" Keyworkd
+        // ==================================================================
+        var obj = {
+            color: 'white',
+            length: '3cm',
+            speed: '24km/h',
+            "background color": 'red' // we can keep "space" within name of a key (Object Literal)
+        }
+
+        
+        for(key in obj) {
+            console.log(key); // color length speed (these are the "keys")
+            // console.log(obj.key); // undefined
+            console.log(obj[key]); // white 3cm 24km/h (these are the "values")
+            // NOTE: We use "Square Brackets" [], if we want to access "value" of a key in an object.
+        }
+        
+        // NOTE: We can confirm a key in an object by using the followings:
+        console.log('color' in obj); // true
+        console.log(obj.hasOwnProperty('color')); // true
+
+        console.log('data' in obj); // false
+        console.log(obj.hasOwnProperty('data')); // false
+
+        console.log(obj.hasOwnProperty('valueOf'));// false ("hasOwnProperty" only checks in keys, not in "prototypes")
+        
+        console.log('valueOf' in obj); // true ("in" checks in the keys, as well as in "prototypes")
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
